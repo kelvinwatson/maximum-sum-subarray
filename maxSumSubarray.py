@@ -10,7 +10,9 @@
 #==============================================================================
 
 
-#Agorithm 3: Divide and Conquer
+
+
+#Algorithm 3: Divide and Conquer
 
 def max_cross_subarray(array, low, mid, high):
     """Returns the low index, high index, and sum of the subarray that crosses

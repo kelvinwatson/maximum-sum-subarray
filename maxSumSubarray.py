@@ -20,33 +20,22 @@ def max_cross_subarray(array, low, mid, high):
     max_left=0
     max_right=0
     sum = 0
-    print("array in max_cross_subarray function="+str(array))
-    print("low="+str(low)+" mid="+str(mid)+" high="+str(high))
-    left_half = array[low:mid+1]
-    right_half = array[mid+1:high+1]
-    print("left_half in max_cross_subarray function="+str(left_half))
-    print("right_half in max_cross_subarray function="+str(right_half))
+    #left_half = array[low:mid+1]
+    #right_half = array[mid+1:high+1]
 
     for i, val in reversed(list(enumerate(array[low:mid+1]))):
-        print("i="+str(i), "val="+str(val))
         sum = sum + array[low:mid+1][i]
         if sum > left_sum:
             left_sum = sum
             max_left = i
-    print("left final: sum="+str(sum)+" left_sum="+str(left_sum))
 
     sum = 0
     for j,val in enumerate(array[mid+1:high+1]):
-        print("j="+str(j), "val="+str(val))
         sum = sum + array[mid+1:high+1][j]
-        print("sum after addition="+str(sum))
         if sum > right_sum:
             right_sum = sum
-            print("right_sum="+str(right_sum))
             max_right = j+mid+1
-    print("right final: sum="+str(sum)+" right_sum="+str(right_sum))
 
-    print("left_sum+right_sum="+str(left_sum+right_sum))
     return (max_left, max_right, left_sum + right_sum)
 
 
@@ -70,6 +59,9 @@ def max_subarray_recursive(array, low, high):
 
 
 #TEST SCRIPT
+
 vals=[10,8,-255,-30,50,30050,8,50,-77,76,-75]
+
+print("---TESTING ALGORITHM 3---")
 print(str(max_subarray_recursive(vals,0,10)))
 

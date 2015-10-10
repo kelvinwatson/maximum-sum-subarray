@@ -38,7 +38,8 @@ def max_cross_subarray(array, low, mid, high):
         sum = sum + array[j]
         if sum > right_sum:
             right_sum = sum
-            max_right = j
+            max_right = j+mid+1
+    print("left_sum+right_sum="+str(left_sum+right_sum))
     return (max_left, max_right, left_sum + right_sum)
 
 

@@ -9,6 +9,22 @@
 #python_version :2.6.6
 #==============================================================================
 
+#Algorithm 1:
+
+def brute_force_enumeration(array):
+    left = right = bestRight = currBestSum = tempSum = 0
+    for i,v in enumerate(array):
+        tempSum = loopSum = array[i]
+        for j,v in enumerate(array[i+1:],i+1):
+            tempSum = tempSum + array[j]
+            if tempSum > loopSum:
+                loopSum = tempSum
+                right = j
+        if loopSum>currBestSum:
+            currBestSum = loopSum
+            left = i
+            bestRight = right
+    return (left,bestRight,currBestSum)
 
 #Algorithm 2:
 
@@ -75,6 +91,9 @@ def max_subarray_recursive(array, low, high):
 
 vals=[10,8,-255,-30,50,30050,8,50,-77,76,-75]
 vals2=[-2,1,8,2,-6,5,105]
+print("---TESTING ALGORITHM 1---")
+print(str(brute_force_enumeration(vals)))
+print(str(brute_force_enumeration(vals2)))
 print("---TESTING ALGORITHM 2---")
 print(str(better_enumeration(vals)))
 print(str(better_enumeration(vals2)))

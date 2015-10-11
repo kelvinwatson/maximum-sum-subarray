@@ -12,32 +12,32 @@
 #Algorithm 1:
 
 def brute_force_enumeration(array):
-    left = right = bestRight = currBestSum = tempSum = 0
+    left = right = best_right = curr_best_sum = temp_sum = 0
     for i,v in enumerate(array):
-        tempSum = loopSum = array[i]
+        temp_sum = loop_sum = array[i]
         for j,v in enumerate(array[i+1:],i+1):
-            tempSum = tempSum + array[j]
-            if tempSum > loopSum:
-                loopSum = tempSum
+            temp_sum = temp_sum + array[j]
+            if temp_sum > loop_sum:
+                loop_sum = temp_sum
                 right = j
-        if loopSum>currBestSum:
-            currBestSum = loopSum
+        if loop_sum>curr_best_sum:
+            curr_best_sum = loop_sum
             left = i
-            bestRight = right
-    return (left,bestRight,currBestSum)
+            best_right = right
+    return (left,best_right,curr_best_sum)
 
 #Algorithm 2:
 
 def better_enumeration(array):
-	currBestSum = tempSum = array[0]
+	curr_best_sum = temp_sum = array[0]
 	left = right = 0
 	for i,v in enumerate(array[1:]):
-		tempSum = max(array[1:][i], tempSum+array[1:][i])
-		#NOTE: tempSum is really tempSum from left to i-1
-		if(tempSum == array[1:][i]): left=i+1
-		currBestSum = max(currBestSum, tempSum)
-		if(currBestSum == tempSum): right=i+1
-	return (left,right,currBestSum)
+		temp_sum = max(array[1:][i], temp_sum+array[1:][i])
+		#NOTE: temp_sum is really temp_sum from left to i-1
+		if(temp_sum == array[1:][i]): left=i+1
+		curr_best_sum = max(curr_best_sum, temp_sum)
+		if(curr_best_sum == temp_sum): right=i+1
+	return (left,right,curr_best_sum)
 
 #Algorithm 3: Divide and Conquer
 

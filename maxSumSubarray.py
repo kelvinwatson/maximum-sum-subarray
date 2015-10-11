@@ -10,7 +10,18 @@
 #==============================================================================
 
 
+#Algorithm 2:
 
+def better_enumeration(array):
+	currBestSum = tempSum = array[0]
+	left = right = 0
+	for i,v in enumerate(array[1:]):
+		tempSum = max(array[1:][i], tempSum+array[1:][i])
+		#NOTE: tempSum is really tempSum from left to i-1
+		if(tempSum == array[1:][i]): left=i+1
+		currBestSum = max(currBestSum, tempSum)
+		if(currBestSum == tempSum): right=i+1
+	return (left,right,currBestSum)
 
 #Algorithm 3: Divide and Conquer
 
@@ -63,7 +74,11 @@ def max_subarray_recursive(array, low, high):
 #TEST SCRIPT
 
 vals=[10,8,-255,-30,50,30050,8,50,-77,76,-75]
-
+vals2=[-2,1,8,2,-6,5,105]
+print("---TESTING ALGORITHM 2---")
+print(str(better_enumeration(vals)))
+print(str(better_enumeration(vals2)))
 print("---TESTING ALGORITHM 3---")
 print(str(max_subarray_recursive(vals,0,10)))
+print(str(max_subarray_recursive(vals2,0,6)))
 

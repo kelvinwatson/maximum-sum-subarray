@@ -14,7 +14,6 @@ import maxSumSubarray
 import time
 import csv
 
-
 def random_array(n):
     """ returns a list of n integers with at least one positive integer"""
     has_pos_int = False
@@ -37,13 +36,12 @@ def create_ten_input_sizes(start, interval):
     return input_sizes
 
 
+
 #Storage for the 10 input sizes of the arrays
 alg_1_input_sizes = create_ten_input_sizes(100, 10)
 alg_2_input_sizes = create_ten_input_sizes(100, 100)
 alg_3_input_sizes = create_ten_input_sizes(100, 100)
 alg_4_input_sizes = create_ten_input_sizes(100, 100)
-
-
 
 alg_time =[]
 #title specifice to Alg 1

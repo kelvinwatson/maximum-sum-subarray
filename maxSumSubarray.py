@@ -116,81 +116,80 @@ def linear_time(array):
     return (left,right,currBestSum)
 
 #TEST SCRIPT
-
-vals1=[10,8,-255,-30,50,30050,8,50,-77,76,-75]
-vals2=[-2,1,8,2,-6,5,105]
-vals3=[1,-2,-3,-4,-5,-6,-7,-8,-9,-10]
-vals4=[10,20,30,40,50]
-vals5=[-1,-1,-1,10000,-1,-1,-1]
-
-
-mss1=[1, 4, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11]
-mss2=[2, 9, 8, 6, 5, -11, 9, -11, 7, 5, -1, -8, -3, 7, -2]
-mss3=[10, -11, -1, -9, 33, -45, 23, 24, -1, -7, -8, 19]
-mss4=[31,-41, 59, 26, -53, 58, 97, -93, -23, 84]
-mss5=[3, 2, 1, 1, -8, 1, 1, 2, 3]
-mss6=[12, 99, 99, -99, -27, 0, 0, 0, -3, 10]
-mss7=[-2, 1, -3, 4, -1, 2, 1, -5, 4]
-
-print("--TESTING ALGORITHM 1---")
-#print(str(enumeration(vals1)))
-#print(str(enumeration(vals2)))
-#print(str(enumeration(vals3)))
-#print(str(enumeration(vals4)))
-#print(str(enumeration(vals5)))
-
-print(str(enumeration(mss1)))
-print(str(enumeration(mss2)))
-print(str(enumeration(mss3)))
-print(str(enumeration(mss4)))
-print(str(enumeration(mss5)))
-print(str(enumeration(mss6)))
-print(str(enumeration(mss7)))
+# vals1=[10,8,-255,-30,50,30050,8,50,-77,76,-75]
+# vals2=[-2,1,8,2,-6,5,105]
+# vals3=[1,-2,-3,-4,-5,-6,-7,-8,-9,-10]
+# vals4=[10,20,30,40,50]
+# vals5=[-1,-1,-1,10000,-1,-1,-1]
 
 
+# mss1=[1, 4, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11]
+# mss2=[2, 9, 8, 6, 5, -11, 9, -11, 7, 5, -1, -8, -3, 7, -2]
+# mss3=[10, -11, -1, -9, 33, -45, 23, 24, -1, -7, -8, 19]
+# mss4=[31,-41, 59, 26, -53, 58, 97, -93, -23, 84]
+# mss5=[3, 2, 1, 1, -8, 1, 1, 2, 3]
+# mss6=[12, 99, 99, -99, -27, 0, 0, 0, -3, 10]
+# mss7=[-2, 1, -3, 4, -1, 2, 1, -5, 4]
 
-print("---TESTING ALGORITHM 2---")
-#print(str(better_enumeration(vals1)))
-#print(str(better_enumeration(vals2)))
-#print(str(better_enumeration(vals3)))
-#print(str(better_enumeration(vals4)))
-#print(str(better_enumeration(vals5)))
+# print("--TESTING ALGORITHM 1---")
+# #print(str(enumeration(vals1)))
+# #print(str(enumeration(vals2)))
+# #print(str(enumeration(vals3)))
+# #print(str(enumeration(vals4)))
+# #print(str(enumeration(vals5)))
 #
-print(str(better_enumeration(mss1)))
-print(str(better_enumeration(mss2)))
-print(str(better_enumeration(mss3)))
-print(str(better_enumeration(mss4)))
-print(str(better_enumeration(mss5)))
-print(str(better_enumeration(mss6)))
-print(str(better_enumeration(mss7)))
+# print(str(enumeration(mss1)))
+# print(str(enumeration(mss2)))
+# print(str(enumeration(mss3)))
+# print(str(enumeration(mss4)))
+# print(str(enumeration(mss5)))
+# print(str(enumeration(mss6)))
+# print(str(enumeration(mss7)))
 #
 #
-print("---TESTING ALGORITHM 3---")
-# #print(str(max_subarray_recursive(vals1,0,10)))
-# #print(str(max_subarray_recursive(vals2,0,6)))
-# #print(str(max_subarray_recursive(vals3,0,9)))
-# #print(str(max_subarray_recursive(vals4,0,4)))
-# #print(str(max_subarray_recursive(vals5,0,6)))
-
-print(str(max_subarray_recursive(mss1,0,15)))
-print(str(max_subarray_recursive(mss2,0,14)))
-print(str(max_subarray_recursive(mss3,0,11)))
-print(str(max_subarray_recursive(mss4,0,9)))
-print(str(max_subarray_recursive(mss5,0,8)))
-print(str(max_subarray_recursive(mss6,0,9)))
-print(str(max_subarray_recursive(mss7,0,8)))
-
-print("---TESTING ALGORITHM 4---")
-# #print(str(linear_time(vals1)))
-# #print(str(linear_time(vals2)))
-# #print(str(linear_time(vals3)))
-# #print(str(linear_time(vals4)))
-# #print(str(linear_time(vals5)))
-
-print(str(linear_time(mss1)))
-print(str(linear_time(mss2)))
-print(str(linear_time(mss3)))
-print(str(linear_time(mss4)))
-print(str(linear_time(mss5)))
-print(str(linear_time(mss6)))
-print(str(linear_time(mss7)))
+#
+# print("---TESTING ALGORITHM 2---")
+# #print(str(better_enumeration(vals1)))
+# #print(str(better_enumeration(vals2)))
+# #print(str(better_enumeration(vals3)))
+# #print(str(better_enumeration(vals4)))
+# #print(str(better_enumeration(vals5)))
+# #
+# print(str(better_enumeration(mss1)))
+# print(str(better_enumeration(mss2)))
+# print(str(better_enumeration(mss3)))
+# print(str(better_enumeration(mss4)))
+# print(str(better_enumeration(mss5)))
+# print(str(better_enumeration(mss6)))
+# print(str(better_enumeration(mss7)))
+# #
+# #
+# print("---TESTING ALGORITHM 3---")
+# # #print(str(max_subarray_recursive(vals1,0,10)))
+# # #print(str(max_subarray_recursive(vals2,0,6)))
+# # #print(str(max_subarray_recursive(vals3,0,9)))
+# # #print(str(max_subarray_recursive(vals4,0,4)))
+# # #print(str(max_subarray_recursive(vals5,0,6)))
+#
+# print(str(max_subarray_recursive(mss1,0,15)))
+# print(str(max_subarray_recursive(mss2,0,14)))
+# print(str(max_subarray_recursive(mss3,0,11)))
+# print(str(max_subarray_recursive(mss4,0,9)))
+# print(str(max_subarray_recursive(mss5,0,8)))
+# print(str(max_subarray_recursive(mss6,0,9)))
+# print(str(max_subarray_recursive(mss7,0,8)))
+#
+# print("---TESTING ALGORITHM 4---")
+# # #print(str(linear_time(vals1)))
+# # #print(str(linear_time(vals2)))
+# # #print(str(linear_time(vals3)))
+# # #print(str(linear_time(vals4)))
+# # #print(str(linear_time(vals5)))
+#
+# print(str(linear_time(mss1)))
+# print(str(linear_time(mss2)))
+# print(str(linear_time(mss3)))
+# print(str(linear_time(mss4)))
+# print(str(linear_time(mss5)))
+# print(str(linear_time(mss6)))
+# print(str(linear_time(mss7)))

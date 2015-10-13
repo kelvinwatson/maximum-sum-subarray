@@ -12,6 +12,7 @@
 import random
 import maxSumSubarray
 import time
+import csv
 
 
 def random_array(n):
@@ -60,6 +61,15 @@ for n in alg_1_input_sizes:
         total_time += elapsed
     alg_time.append(total_time/10.0)
 
+
+#This opens the csv file and clears it, change
+#'wb' to 'ab' to append
+with open('stats.csv', 'wb') as csvfile:
+    statswriter = csv.writer(csvfile)
+    statswriter.writerow(alg_1_input_sizes)
+    statswriter.writerow(alg_time)
+
+
 #input sizes specific to Alg 1
 print alg_1_input_sizes
 print alg_time
@@ -79,6 +89,12 @@ for n in alg_2_input_sizes:
         elapsed = time.clock() - start
         total_time += elapsed
     alg_time.append(total_time/10.0)
+
+
+with open('stats.csv', 'ab') as csvfile:
+    statswriter = csv.writer(csvfile)
+    statswriter.writerow(alg_2_input_sizes)
+    statswriter.writerow(alg_time)
 
 #input sizes specific to Alg
 print alg_2_input_sizes
@@ -100,6 +116,11 @@ for n in alg_3_input_sizes:
         total_time += elapsed
     alg_time.append(total_time/10.0)
 
+with open('stats.csv', 'ab') as csvfile:
+    statswriter = csv.writer(csvfile)
+    statswriter.writerow(alg_3_input_sizes)
+    statswriter.writerow(alg_time)
+
 #input sizes specific to Alg
 print alg_3_input_sizes
 print alg_time
@@ -119,6 +140,11 @@ for n in alg_4_input_sizes:
         elapsed = time.clock() - start
         total_time += elapsed
     alg_time.append(total_time/10.0)
+
+with open('stats.csv', 'ab') as csvfile:
+    statswriter = csv.writer(csvfile)
+    statswriter.writerow(alg_3_input_sizes)
+    statswriter.writerow(alg_time)
 
 #input sizes specific to Alg
 print alg_4_input_sizes

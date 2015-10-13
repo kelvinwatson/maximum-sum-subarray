@@ -115,13 +115,40 @@ def linear_time(array):
             right = i
     return (left,right,currBestSum)
 
+
+with open("MSS_TestProblems-1.txt", "r") as f:
+    for line in f:
+        line = line.replace("[", "")
+        line = line.replace("]", "")
+        line = line.replace("\n","")
+        mss = line.split(",")
+        mss = [int(i) for i in mss]
+        print(mss)
+        print("Algorithm 1 (left,right,sum):" + str(enumeration(mss)))
+        print("Algorithm 2 (left,right,sum):" + str(better_enumeration(mss)))
+        print("Algorithm 3 (left,right,sum):"+ str(max_subarray_recursive(mss,0,len(mss)-1)))
+        print("Algorithm 4 (left,right,sum):" + str(linear_time(mss)) + "\n")
+f.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #TEST SCRIPT
 # vals1=[10,8,-255,-30,50,30050,8,50,-77,76,-75]
 # vals2=[-2,1,8,2,-6,5,105]
 # vals3=[1,-2,-3,-4,-5,-6,-7,-8,-9,-10]
 # vals4=[10,20,30,40,50]
 # vals5=[-1,-1,-1,10000,-1,-1,-1]
-
 
 # mss1=[1, 4, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11]
 # mss2=[2, 9, 8, 6, 5, -11, 9, -11, 7, 5, -1, -8, -3, 7, -2]
@@ -145,7 +172,7 @@ def linear_time(array):
 # print(str(enumeration(mss5)))
 # print(str(enumeration(mss6)))
 # print(str(enumeration(mss7)))
-#
+# #
 #
 #
 # print("---TESTING ALGORITHM 2---")

@@ -47,7 +47,6 @@ def better_enumeration(array):
 def max_cross_subarray(array, low, mid, high):
     """Returns the low index, high index, and sum of the subarray that crosses
     the middle of the array"""
-
     left_sum = float("-inf")
     max_left=0
     max_right=0
@@ -69,9 +68,7 @@ def max_cross_subarray(array, low, mid, high):
 
 
 def max_subarray_recursive(array, low, high):
-    """Returns the low index, high index, and sum of the subarray with max sum
-    """
-
+    """Returns the low index, high index, and sum of the subarray with max sum"""
     if high == low:
         return (low, high, array[low])
     else:
@@ -103,11 +100,11 @@ def linear_time(array):
     currBestSum = tempSum = tempLeft = left = 0
     right = -1
     for i,v in enumerate(array):
-        if (tempSum + array[i]) < 0: #everything before is trumped
+        if (tempSum + v) < 0: #everything before is trumped
             tempLeft=i+1
             tempSum=0 #trash previous values and start counting from here!
         else:	#adding the array[i] to tempSum makes tempSum larger than before
-            tempSum+=array[i]
+            tempSum+=v
         if tempSum > currBestSum:	#if tempSum results in a larger sum, then make it the best
             currBestSum = tempSum
             left = tempLeft
@@ -126,13 +123,13 @@ def linear_time(array):
 # vals4=[10,20,30,40,50]
 # vals5=[-1,-1,-1,10000,-1,-1,-1]
 
-# mss1=[1, 4, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11]
-# mss2=[2, 9, 8, 6, 5, -11, 9, -11, 7, 5, -1, -8, -3, 7, -2]
-# mss3=[10, -11, -1, -9, 33, -45, 23, 24, -1, -7, -8, 19]
-# mss4=[31,-41, 59, 26, -53, 58, 97, -93, -23, 84]
-# mss5=[3, 2, 1, 1, -8, 1, 1, 2, 3]
-# mss6=[12, 99, 99, -99, -27, 0, 0, 0, -3, 10]
-# mss7=[-2, 1, -3, 4, -1, 2, 1, -5, 4]
+mss1=[1, 4, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11]
+mss2=[2, 9, 8, 6, 5, -11, 9, -11, 7, 5, -1, -8, -3, 7, -2]
+mss3=[10, -11, -1, -9, 33, -45, 23, 24, -1, -7, -8, 19]
+mss4=[31,-41, 59, 26, -53, 58, 97, -93, -23, 84]
+mss5=[3, 2, 1, 1, -8, 1, 1, 2, 3]
+mss6=[12, 99, 99, -99, -27, 0, 0, 0, -3, 10]
+mss7=[-2, 1, -3, 4, -1, 2, 1, -5, 4]
 
 # print("--TESTING ALGORITHM 1---")
 # #print(str(enumeration(vals1)))
@@ -174,13 +171,13 @@ def linear_time(array):
 # # #print(str(max_subarray_recursive(vals4,0,4)))
 # # #print(str(max_subarray_recursive(vals5,0,6)))
 #
-# print(str(max_subarray_recursive(mss1,0,15)))
-# print(str(max_subarray_recursive(mss2,0,14)))
-# print(str(max_subarray_recursive(mss3,0,11)))
-# print(str(max_subarray_recursive(mss4,0,9)))
-# print(str(max_subarray_recursive(mss5,0,8)))
-# print(str(max_subarray_recursive(mss6,0,9)))
-# print(str(max_subarray_recursive(mss7,0,8)))
+print(str(max_subarray_recursive(mss1,0,15)))
+print(str(max_subarray_recursive(mss2,0,14)))
+print(str(max_subarray_recursive(mss3,0,11)))
+print(str(max_subarray_recursive(mss4,0,9)))
+print(str(max_subarray_recursive(mss5,0,8)))
+print(str(max_subarray_recursive(mss6,0,9)))
+print(str(max_subarray_recursive(mss7,0,8)))
 #
 # print("---TESTING ALGORITHM 4---")
 # # #print(str(linear_time(vals1)))
@@ -189,10 +186,10 @@ def linear_time(array):
 # # #print(str(linear_time(vals4)))
 # # #print(str(linear_time(vals5)))
 #
-# print(str(linear_time(mss1)))
-# print(str(linear_time(mss2)))
-# print(str(linear_time(mss3)))
-# print(str(linear_time(mss4)))
-# print(str(linear_time(mss5)))
-# print(str(linear_time(mss6)))
-# print(str(linear_time(mss7)))
+print(str(linear_time(mss1)))
+print(str(linear_time(mss2)))
+print(str(linear_time(mss3)))
+print(str(linear_time(mss4)))
+print(str(linear_time(mss5)))
+print(str(linear_time(mss6)))
+print(str(linear_time(mss7)))

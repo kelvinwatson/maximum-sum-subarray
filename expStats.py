@@ -16,8 +16,7 @@ import csv
 
 
 def random_array(n):
-    """ returns a list of arrays with n integers in each array, with each array
-    having at least 1 positive integer"""
+    """ returns a list of n integers with at least one positive integer"""
     has_pos_int = False
     while not has_pos_int:
         array = []

@@ -16,7 +16,7 @@ def enumeration(array):
     left = right = 0
     max_sum = array[0] #I added this line, else this kind of array fails [-2,-3,-4]
     for i,x in enumerate(array):
-        for j,y in enumerate(array[i+1:],i+1):
+        for j,y in enumerate(array[i:],i):
             temp_sum=0
             for k,z in enumerate(array[i:j+1],i):
                 temp_sum = temp_sum + z #accumulate sum for this pair
@@ -110,29 +110,34 @@ def linear_time(array):
 
 vals1=[10,8,-255,-30,50,30050,8,50,-77,76,-75]
 vals2=[-2,1,8,2,-6,5,105]
-vals3=[-2,-3,-4,-5,-6,-7,-8,-9,-10]
+vals3=[1,-2,-3,-4,-5,-6,-7,-8,-9,-10]
 vals4=[10,20,30,40,50]
+vals5=[-1,-1,-1,10000,-1,-1,-1]
 
 print("---TESTING ALGORITHM 1---")
 print(str(enumeration(vals1)))
 print(str(enumeration(vals2)))
 print(str(enumeration(vals3)))
 print(str(enumeration(vals4)))
+print(str(enumeration(vals5)))
 
 print("---TESTING ALGORITHM 2---")
 print(str(better_enumeration(vals1)))
 print(str(better_enumeration(vals2)))
 print(str(better_enumeration(vals3)))
 print(str(better_enumeration(vals4)))
+print(str(better_enumeration(vals5)))
 
 print("---TESTING ALGORITHM 3---")
 print(str(max_subarray_recursive(vals1,0,10)))
 print(str(max_subarray_recursive(vals2,0,6)))
-print(str(max_subarray_recursive(vals3,0,8)))
+print(str(max_subarray_recursive(vals3,0,9)))
 print(str(max_subarray_recursive(vals4,0,4)))
+print(str(max_subarray_recursive(vals5,0,6)))
 
 print("---TESTING ALGORITHM 4---")
 print(str(linear_time(vals1)))
 print(str(linear_time(vals2)))
 print(str(linear_time(vals3)))
 print(str(linear_time(vals4)))
+print(str(linear_time(vals5)))

@@ -49,26 +49,23 @@ def max_cross_subarray(array, low, mid, high):
     """Returns the low index, high index, and sum of the subarray that crosses
     the middle of the array"""
 
-    left_sum = right_sum = 0
+    left_sum = float("-inf")
     max_left=0
     max_right=0
     sum = 0
-    #left_half = array[low:mid+1]
-    #right_half = array[mid+1:high+1]
-
-    for i, val in reversed(list(enumerate(array[low:mid+1]))):
-        sum = sum + array[low:mid+1][i]
+    #for i, val in reversed(list(enumerate(array[low:mid+1],mid+1))):
+    for i in reversed(range(low,mid+1)):
+        sum = sum + array[i]
         if sum > left_sum:
             left_sum = sum
             max_left = i
-
+    right_sum=float("-inf")
     sum = 0
-    for j,val in enumerate(array[mid+1:high+1]):
-        sum = sum + array[mid+1:high+1][j]
+    for j in range(mid+1,high+1):
+        sum = sum + array[j]
         if sum > right_sum:
             right_sum = sum
-            max_right = j+mid+1
-
+            max_right = j
     return (max_left, max_right, left_sum + right_sum)
 
 

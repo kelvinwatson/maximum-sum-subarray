@@ -115,7 +115,7 @@ def linear_time(array):
             right = i
     return (left,right,currBestSum)
 
-
+arrays = []
 with open("MSS_TestProblems-1.txt", "r") as f:
     for line in f:
         line = line.replace("[", "")
@@ -123,14 +123,16 @@ with open("MSS_TestProblems-1.txt", "r") as f:
         line = line.replace("\n","")
         mss = line.split(",")
         mss = [int(i) for i in mss]
-        print(mss)
-        print("Algorithm 1 (left,right,sum):" + str(enumeration(mss)))
-        print("Algorithm 2 (left,right,sum):" + str(better_enumeration(mss)))
-        print("Algorithm 3 (left,right,sum):"+ str(max_subarray_recursive(mss,0,len(mss)-1)))
-        print("Algorithm 4 (left,right,sum):" + str(linear_time(mss)) + "\n")
+        print mss
+        arrays.append(mss)
 f.close()
 
-
+print '\n'
+for mss in arrays:
+    print("Algorithm 1 (left,right,sum):" + str(enumeration(mss)))
+    print("Algorithm 2 (left,right,sum):" + str(better_enumeration(mss)))
+    print("Algorithm 3 (left,right,sum):" + str(max_subarray_recursive(mss, 0, len(mss)-1)))
+    print("Algorithm 4 (left,right,sum):" + str(linear_time(mss)) + "\n")
 
 
 

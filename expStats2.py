@@ -30,7 +30,6 @@ def random_array(n):
             array.append(x)
     return array
 
-
 def create_ten_input_sizes(start, interval):
     """create array of 10 from start"""
     d = 30  #this is specified in the project, must have 10 different input sizes

@@ -39,15 +39,10 @@ def create_ten_input_sizes(start, interval):
         input_sizes.append(start + (i * interval))
     return input_sizes
 
-def runAlgorithm(alg, n, interval):
+def runAlgorithm(alg, interval):
     """utility run a certain function n times"""
     rand_input = create_ten_input_sizes(100, interval)
-    for i in range(1,n+1):
-        alg(rand_input)
-
-#----------------------------------------------------------------
-# SETUP
-#----------------------------------------------------------------
+    alg(rand_input)
 
 
 #----------------------------------------------------------------
@@ -176,8 +171,8 @@ def algorithm4(alg_4_input_sizes):
 # MAIN
 #----------------------------------------------------------------
 
-#unAlgorithm(algorithm1, 10, 10) #(function_to_run, # of times to run, the interval)
-runAlgorithm(algorithm2, 10, 100)
-runAlgorithm(algorithm3, 10, 100)
-#runAlgorithm(algorithm4, 10, 100)
+#unAlgorithm(algorithm1, 10)
+#runAlgorithm(algorithm2, 100)
+#runAlgorithm(algorithm3, 100)
+runAlgorithm(algorithm4, 100)
     

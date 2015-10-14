@@ -38,7 +38,8 @@ def create_ten_input_sizes(start, interval):
         input_sizes.append(start + (i * interval))
     return input_sizes
 
-def saveRunTime(algorithm, input_sizes, file_name):
+def saveRunTime(algorithm, input_sizes, file_name, recursive=0):
+    
     print "running"
     alg_time =[]
     #list to iterate specific to Alg
@@ -48,7 +49,11 @@ def saveRunTime(algorithm, input_sizes, file_name):
             temp_array = random_array(n)
             start = time.clock()
             #call to algorithm function
-            algorithm(temp_array)
+            if recursive:
+                algorithm(temp_array, 0, len(temp_array) - 1)
+            else:
+                algorithm(temp_array)
+                
             elapsed = time.clock() - start
             total_time += elapsed
         alg_time.append(total_time/10.0)
@@ -67,11 +72,11 @@ def saveRunTime(algorithm, input_sizes, file_name):
 # MAIN
 #----------------------------------------------------------------
 
-input_size = create_ten_input_sizes(100, 10)
-saveRunTime(maxSumSubarray.enumeration, input_size, 'stats1.csv')
+#input_size = create_ten_input_sizes(100, 10)
+#saveRunTime(maxSumSubarray.enumeration, input_size, 'stats1.csv')
 
 input_size = create_ten_input_sizes(100, 100)
-saveRunTime(maxSumSubarray.better_enumeration, input_size, 'stats2.csv')
-saveRunTime(maxSumSubarray.max_subarray_recursive, input_size, 'stats3.csv')
+#saveRunTime(maxSumSubarray.better_enumeration, input_size, 'stats2.csv')
+saveRunTime(maxSumSubarray.max_subarray_recursive, input_size, 'stats3.csv', 1)
 saveRunTime(maxSumSubarray.linear_time, input_size, 'stats4.csv')
 

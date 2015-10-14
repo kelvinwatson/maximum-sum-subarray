@@ -171,7 +171,7 @@ def algorithm4(alg_4_input_sizes):
 # MAIN
 #----------------------------------------------------------------
 
-#unAlgorithm(algorithm1, 10)
+#runAlgorithm(algorithm1, 10)
 #runAlgorithm(algorithm2, 100)
 #runAlgorithm(algorithm3, 100)
 runAlgorithm(algorithm4, 100)

@@ -41,7 +41,7 @@ def create_ten_input_sizes(start, interval):
 def saveRunTime(algorithm, input_sizes, file_name):
     print "running"
     alg_time =[]
-    #list to iterate specific to Alg 1
+    #list to iterate specific to Alg
     for n in input_sizes:
         total_time = 0
         for i in range(0, 10):
@@ -67,8 +67,8 @@ def saveRunTime(algorithm, input_sizes, file_name):
 # MAIN
 #----------------------------------------------------------------
 
-input_size = create_ten_input_sizes(100, 10, 'stats1.csv')
-saveRunTime(maxSumSubarray.enumeration, input_size)
+input_size = create_ten_input_sizes(100, 10)
+saveRunTime(maxSumSubarray.enumeration, input_size, 'stats1.csv')
 
 input_size = create_ten_input_sizes(100, 100)
 saveRunTime(maxSumSubarray.better_enumeration, input_size, 'stats2.csv')

@@ -72,7 +72,7 @@ def saveRunTime(algorithm, input_sizes, file_name, recursive=0):
 # MAIN
 #----------------------------------------------------------------
 
-#input_size = create_ten_input_sizes(100, 10)
+input_size = create_ten_input_sizes(100, 10)
 saveRunTime(maxSumSubarray.enumeration, input_size, 'stats1.csv')
 
 input_size = create_ten_input_sizes(100, 100)

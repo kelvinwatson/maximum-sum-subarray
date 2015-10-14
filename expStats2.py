@@ -65,7 +65,7 @@ def saveRunTime(algorithm, input_sizes, file_name, recursive=0):
         statswriter = csv.writer(csvfile)
         statswriter.writerow(input_sizes)
         statswriter.writerow(alg_time)
-    print " >>>>> done! \n"
+    print " >>>>> done! Results written to", file_name
 
 
 #----------------------------------------------------------------
@@ -73,10 +73,10 @@ def saveRunTime(algorithm, input_sizes, file_name, recursive=0):
 #----------------------------------------------------------------
 
 #input_size = create_ten_input_sizes(100, 10)
-#saveRunTime(maxSumSubarray.enumeration, input_size, 'stats1.csv')
+saveRunTime(maxSumSubarray.enumeration, input_size, 'stats1.csv')
 
 input_size = create_ten_input_sizes(100, 100)
-#saveRunTime(maxSumSubarray.better_enumeration, input_size, 'stats2.csv')
+saveRunTime(maxSumSubarray.better_enumeration, input_size, 'stats2.csv')
 saveRunTime(maxSumSubarray.max_subarray_recursive, input_size, 'stats3.csv', 1)
 saveRunTime(maxSumSubarray.linear_time, input_size, 'stats4.csv')
 

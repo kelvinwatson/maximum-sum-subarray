@@ -25,6 +25,13 @@ with open("MSS_TestProblems.txt", "r") as f:
         testCaseNum += 1
 f.close()
 
+def algorithmDisplayResults(algorithm, temp_array, recursive=0):
+            if recursive:
+                i, j, max_sub_sum = algorithm(temp_array, 0, len(temp_array) - 1)
+            else:
+                i, j, max_sub_sum = algorithm(temp_array)
+            return max_sub_sum, temp_array[i:j+1]
+
 print '\n'
 testCaseNum = 1
 with open("MSS_Results.txt", "w") as f:
@@ -32,9 +39,13 @@ with open("MSS_Results.txt", "w") as f:
         f.write("Test Case: " + str(testCaseNum) + "\n")
         f.write( str(mss) + "\n" )
         f.write("--------------------------------\n")
-        f.write("Algorithm 1 (left,right,sum):" + str(maxSumSubarray.enumeration(mss)) + "\n")
-        f.write("Algorithm 2 (left,right,sum):" + str(maxSumSubarray.better_enumeration(mss)) + "\n")
-        f.write("Algorithm 3 (left,right,sum):" + str(maxSumSubarray.max_subarray_recursive(mss, 0, len(mss)-1)) + "\n")
-        f.write("Algorithm 4 (left,right,sum):" + str(maxSumSubarray.linear_time(mss)) + "\n\n\n")
+        max_sum, max_subarray = algorithmDisplayResults(maxSumSubarray.enumeration, mss)
+        f.write("Algorithm 1 (sum, subarray): " + str(max_sum) + "   " + str(max_subarray) + "\n")
+        max_sum, max_subarray = algorithmDisplayResults(maxSumSubarray.better_enumeration, mss)
+        f.write("Algorithm 2 (sum, subarray): " + str(max_sum) + "   " + str(max_subarray) + "\n")
+        max_sum, max_subarray = algorithmDisplayResults(maxSumSubarray.max_subarray_recursive, mss, 1)
+        f.write("Algorithm 3 (sum, subarray): " + str(max_sum) + "   " + str(max_subarray) + "\n")
+        max_sum, max_subarray = algorithmDisplayResults(maxSumSubarray.linear_time, mss)
+        f.write("Algorithm 4 (sum, subarray): " + str(max_sum) + "   " + str(max_subarray) + "\n\n\n")
         testCaseNum += 1
 f.close()

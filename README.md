@@ -4,7 +4,7 @@ To test the programs against the MSS_Problems.txt:
   Ensure that all of the required files are in the same directory. 
   The required files are:
     maxSumSubarray.py		    (contains the four algorithms)
-    main.py				        (runs max subarray algorithms on arrays in MSS_TestProblems.txt) 
+    main.py				        (runs max subarray algorithms on arrays in MSS_Problems.txt) 
     MSS_Problems.txt		    (contains test sets of data (arrays of integers))
   From the command line, run the program by entering:   python main.py
 

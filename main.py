@@ -13,7 +13,7 @@ import maxSumSubarray
 
 testCaseNum = 1
 arrays = []
-with open("MSS_TestProblems.txt", "r") as f:
+with open("MSS_Problems.txt", "r") as f:
     for line in f:
         line = line.replace("[", "")
         line = line.replace("]", "")

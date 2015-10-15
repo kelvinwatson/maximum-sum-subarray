@@ -95,9 +95,9 @@ def linear_time(array):
     currBestSum = tempSum = tempLeft = left = 0
     right = -1
     for i,v in enumerate(array):
-        if (tempSum + v) < 0: #everything before is trumped
+        if (tempSum + v) < 0:
             tempLeft=i+1
-            tempSum=0 #trash previous values and start counting from here!
+            tempSum=0
         else:	#adding the array[i] to tempSum makes tempSum larger than before
             tempSum+=v
         if tempSum > currBestSum:	#if tempSum results in a larger sum, then make it the best

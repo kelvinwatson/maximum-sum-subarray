@@ -2,3 +2,4 @@
 myTestFile.py
 *.pyc
 stats.csv
+nonEssentialFiles/
